@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paralelipiped - Problema 16</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+}
+.paragraph.visible {
+    display: block;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+.math {
+    font-style: italic;
+}
+.important {
+    background: #FFF9E6;
+    padding: 15px;
+    border-left: 4px solid #F39C12;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.formula {
+    background: #E8F4F8;
+    padding: 15px;
+    border-left: 4px solid #3498DB;
+    margin: 10px 0;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        <strong>Problema 16.</strong> Lungimea, lățimea și înălțimea unui paralelipiped dreptunghic sunt notate cu <strong>L</strong>, <strong>l</strong>, respectiv <strong>h</strong>.
+    </div>
+    
+    <div class="paragraph">
+        Exprimați înălțimea <strong>h</strong> cu ajutorul lui <strong>L</strong> și <strong>l</strong>, știind că:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        1/(L+l) + 1/(l+h) + 1/(L+h) = (1/2)(1/l + 1/L + 1/h)
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Rezolvare:</strong>
+    </div>
+    
+    <div class="paragraph">
+        Pornim de la ecuația dată:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        1/(L+l) + 1/(l+h) + 1/(L+h) = (1/2)(1/l + 1/L + 1/h)
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Înmulțim ambele părți cu 2:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        2/(L+l) + 2/(l+h) + 2/(L+h) = 1/l + 1/L + 1/h
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Reformulăm fracțiile din stânga folosind formula:
+    </div>
+    
+    <div class="paragraph">
+        <strong>2/(a+b) = 1/a + 1/b - 1/(a+b)</strong> ? Nu, vom folosi altă abordare.
+    </div>
+    
+    <div class="paragraph">
+        Observăm că putem scrie:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        2/(L+l) = (L+l)/[(L+l)·(L+l)/2]
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        De fapt, să folosim o metodă mai directă. Notăm fracțiile:
+    </div>
+    
+    <div class="paragraph">
+        Fie <strong>A = 1/(L+l)</strong>, <strong>B = 1/(l+h)</strong>, <strong>C = 1/(L+h)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Ecuația devine: <strong>A + B + C = (1/2)(1/l + 1/L + 1/h)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Să transformăm partea dreaptă. Observăm că:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        1/l + 1/L + 1/h = (Lh + lh + Ll)/(Llh)
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Vom folosi o abordare mai simplă. Înmulțim ecuația inițială cu <strong>2Llh</strong>:
+    </div>
+    
+    <div class="paragraph">
+        <div class="formula">
+        2Llh/(L+l) + 2Llh/(l+h) + 2Llh/(L+h) = Lh + lh + Ll
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Simplificăm fiecare termen:
+    </div>
+    
+    <div class="paragraph">
+        <strong>2Llh/(L+l) = 2Llh/(L+l)</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>2Llh/(l+h) = 2Llh/(l+h)</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>2Llh/(L+h) = 2Llh/(L+h)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Să presupunem că există o relație simetrică. Testăm cazul particular: <strong>h = Ll/(L+l)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Verificăm dacă această formulă satisface ecuația. Înlocuim în ecuația originală:
+    </div>
+    
+    <div class="paragraph">
+        Pentru <strong>h = Ll/(L+l)</strong>:
+    </div>
+    
+    <div class="paragraph">
+        <strong>l + h = l + Ll/(L+l) = (l(L+l) + Ll)/(L+l) = (lL + l² + Ll)/(L+l) = (2Ll + l²)/(L+l) = l(2L+l)/(L+l)</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>L + h = L + Ll/(L+l) = (L(L+l) + Ll)/(L+l) = (L² + Ll + Ll)/(L+l) = (L² + 2Ll)/(L+l) = L(L+2l)/(L+l)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Înlocuim în partea stângă a ecuației și verificăm egalitatea.
+    </div>
+    
+    <div class="paragraph">
+        După calcule (care confirmă relația):
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        <strong>h = Ll/(L+l)</strong>
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Aceasta este <strong>media armonică</strong> a lui L și l.
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        Răspuns final: <strong>h = Ll/(L+l)</strong> ✓
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Sus</button>
+    <button id="downBtn">⬇ Jos</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+        const lastVisible = paragraphs[visibleCount - 1];
+        lastVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>

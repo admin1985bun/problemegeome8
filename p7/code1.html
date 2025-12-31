@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problema Geometrie: Pătratul ABCD</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+    border-left: 5px solid #3498db;
+}
+
+.paragraph.visible {
+    display: block;
+}
+
+.math {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    color: #e67e22;
+}
+
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+    transition: background 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background: #34495e;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.title {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="paragraph visible">
+        <div class="title">Ipoteza:</div>
+        Avem un pătrat <span class="math">ABCD</span> cu latura <span class="math">AB = 6 cm</span>. 
+        Pe planul pătratului se ridică perpendicularele <span class="math">AM = 12 cm</span> și <span class="math">BN = 6 cm</span> de aceeași parte a planului.
+    </div>
+
+    <div class="paragraph">
+    Calculați distanța de la punctul M la dreapta CN și aria triunghiului PMN, unde P este intersecția dintre dreapta MN și planul (ABC).
+    </div>
+
+
+    <div class="paragraph">
+        <em>Sursa: Mate 2000 - Editura Paralela 45</em>
+    </div>
+
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Pasul anterior</button>
+	<br><br>
+    <button id="downBtn">⬇ Pasul următor</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+
+    // Scroll automat la ultimul element vizibil
+    if (visibleCount > 1) {
+        paragraphs[visibleCount - 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+    }
+};
+
+updateView();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distanță în Cub</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+}
+.paragraph.visible {
+    display: block;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+.important {
+    background: #FFF9E6;
+    padding: 15px;
+    border-left: 4px solid #F39C12;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.source {
+    font-style: italic;
+    color: #7F8C8D;
+    font-size: 16px;
+}
+.note {
+    background: #E8F4F8;
+    padding: 12px;
+    border-left: 4px solid #3498DB;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        <strong>Problemă:</strong> În figura alăturată este reprezentat un cub \(ABCDA'B'C'D'\) cu \(AB = 6\) cm.
+    </div>
+    
+    <div class="paragraph">
+        <strong>Cerință:</strong> Calculează distanța de la punctul \(A'\) la planul \((BC'D')\).
+    </div>
+    
+    <div class="paragraph">
+        <span class="source">Sursa: Teste minister</span>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Rezolvare:</strong>
+    </div>
+    
+    <div class="paragraph">
+        <div class="note">
+        <strong>Observație:</strong> Pentru a calcula distanța de la un punct la un plan, trebuie să găsim perpendiculara din punct pe plan.
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 1:</strong> Identificăm planul \((BC'D')\)
+    </div>
+    
+    <div class="paragraph">
+        Planul \((BC'D')\) trece prin punctele:
+        <ul>
+            <li>\(B\) - vârf al bazei inferioare</li>
+            <li>\(C'\) - vârf al bazei superioare</li>
+            <li>\(D'\) - vârf al bazei superioare</li>
+        </ul>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 2:</strong> Observăm că planul \((BC'D')\) este un plan diagonal al cubului
+    </div>
+    
+    <div class="paragraph">
+        <div class="note">
+        Triunghiul \(BC'D'\) este un triunghi echilateral (poate fi demonstrat folosind distanțele în cub).
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 3:</strong> Calculăm diagonala feței cubului
+    </div>
+    
+    <div class="paragraph">
+        Diagonala unei fețe a cubului este:
+        $$BD' = BC' = C'D' = AB\sqrt{2} = 6\sqrt{2} \text{ cm}$$
+    </div>
+    
+    <div class="paragraph">
+        Verificăm că \(BC' = \sqrt{BC^2 + CC'^2} = \sqrt{6^2 + 6^2} = \sqrt{72} = 6\sqrt{2}\) cm
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 4:</strong> Calculăm aria triunghiului echilateral \(BC'D'\)
+    </div>
+    
+    <div class="paragraph">
+        Pentru un triunghi echilateral cu latura \(l = 6\sqrt{2}\) cm:
+        $$\text{Aria} = \frac{l^2\sqrt{3}}{4} = \frac{(6\sqrt{2})^2 \cdot \sqrt{3}}{4}$$
+    </div>
+    
+    <div class="paragraph">
+        $$\text{Aria} = \frac{72\sqrt{3}}{4} = 18\sqrt{3} \text{ cm}^2$$
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 5:</strong> Folosim metoda volumului pentru a calcula distanța
+    </div>
+    
+    <div class="paragraph">
+        <div class="note">
+        Tetraedrul \(A'BC'D'\) are volumul care poate fi calculat în două moduri:
+        <ul>
+            <li>Ca parte din cubul total</li>
+            <li>Folosind \(\text{Volum} = \frac{1}{3} \cdot \text{Aria}_{\text{bază}} \cdot h\)</li>
+        </ul>
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 6:</strong> Calculăm volumul tetraedrului \(A'BC'D'\)
+    </div>
+    
+    <div class="paragraph">
+        Volumul cubului este: \(V_{\text{cub}} = 6^3 = 216 \text{ cm}^3\)
+    </div>
+    
+    <div class="paragraph">
+        Tetraedrul \(A'BC'D'\) reprezintă \(\frac{1}{3}\) din volumul cubului:
+        $$V_{A'BC'D'} = \frac{216}{3} = 72 \text{ cm}^3$$
+    </div>
+    
+    <div class="paragraph">
+        <strong>Pasul 7:</strong> Calculăm distanța \(d\) de la \(A'\) la planul \((BC'D')\)
+    </div>
+    
+    <div class="paragraph">
+        Folosim formula volumului:
+        $$V = \frac{1}{3} \cdot \text{Aria}_{(BC'D')} \cdot d$$
+    </div>
+    
+    <div class="paragraph">
+        $$72 = \frac{1}{3} \cdot 18\sqrt{3} \cdot d$$
+    </div>
+    
+    <div class="paragraph">
+        $$72 = 6\sqrt{3} \cdot d$$
+    </div>
+    
+    <div class="paragraph">
+        $$d = \frac{72}{6\sqrt{3}} = \frac{12}{\sqrt{3}}$$
+    </div>
+    
+    <div class="paragraph">
+        Raționalizăm:
+        $$d = \frac{12}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{12\sqrt{3}}{3} = 4\sqrt{3} \text{ cm}$$
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        <strong>Răspuns final:</strong>
+        $$d(A', (BC'D')) = 4\sqrt{3} \text{ cm} \approx 6{,}93 \text{ cm}$$
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Sus</button>
+    <button id="downBtn">⬇ Jos</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+        const lastVisible = paragraphs[visibleCount - 1];
+        lastVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>

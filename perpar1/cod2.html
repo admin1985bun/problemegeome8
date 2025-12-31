@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construcție Planuri Paralele - Pas cu Pas</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+}
+.paragraph.visible {
+    display: block;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.math {
+    font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        Se consideră segmentele necoplanare <strong>DC</strong> și <strong>AB</strong>.
+    </div>
+    
+    <div class="paragraph">
+        Construiți planele paralele care să conțină dreapta <strong>DC</strong>, respectiv dreapta <strong>AB</strong>.
+    </div>
+    
+    <div class="paragraph">
+        <em>Sursa: Mate 2000/Editura Paralela 45</em>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Rezolvare:</strong>
+    </div>
+    
+    <div class="paragraph">
+        Considerăm punctele <strong>F</strong>, <strong>G</strong>, <strong>E</strong> mijloacele segmentelor [BD], [BC], respectiv [AD] ... (1).
+    </div>
+    
+    <div class="paragraph">
+        (1) ⇒ [FG] -- linie mijlocie în <span class="math">△BDC</span> ⇒ <strong>FG ∥ DC</strong>
+    </div>
+    
+    <div class="paragraph">
+        Construim planul <strong>β ∥ (EFG)</strong>, cu <strong>D ∈ β</strong> ⇒ <strong>DC ⊂ β</strong> (<a href="surse/tparal1.html" target="_blank">?</a>) (<a href="surse/tparal5.html" target="_blank">??</a>)
+    </div>
+    
+    <div class="paragraph">
+        (1) ⇒ [FE] -- linie mijlocie în <span class="math">△ABD</span> ⇒ <strong>FE ∥ AB</strong>
+    </div>
+    
+    <div class="paragraph">
+        Construim planul <strong>φ ∥ (EFG)</strong>, cu <strong>A ∈ φ</strong> ⇒ <strong>AB ⊂ φ</strong>
+    </div>
+    
+    <div class="paragraph">
+        Din faptul că <strong>β ∥ (EFG)</strong> și <strong>φ ∥ (EFG)</strong> ⇒ <strong>β ∥ φ</strong> cu <strong>DC ⊂ β</strong> și <strong>AB ⊂ φ</strong>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Sus</button>
+    <button id="downBtn">⬇ Jos</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+        const lastVisible = paragraphs[visibleCount - 1];
+        lastVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tetraedru</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+}
+.paragraph.visible {
+    display: block;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+.math {
+    font-style: italic;
+}
+.important {
+    background: #FFF9E6;
+    padding: 15px;
+    border-left: 4px solid #F39C12;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        Fie ABCD un tetraedru în care triunghiurile <strong>ABC</strong> și <strong>ABD</strong> sunt echilaterale și situate în plane perpendiculare.
+    </div>
+    
+    <div class="paragraph">
+       Se notează cu <strong>M</strong> mijlocul laturii <strong>AB</strong>.
+    </div>
+    
+    <div class="paragraph">
+        <strong>a)</strong> Arătați că <strong>(CMD) ⊥ (ABD)</strong> și <strong>(CMD) ⊥ (ABC)</strong>.
+    </div>
+    
+    <div class="paragraph">
+        <strong>b)</strong> Dacă <strong>AB = 8 cm</strong>, calculați aria triunghiului <strong>CMD</strong>.
+    </div>
+    
+	<div class="paragraph">
+    <strong>Rezolvare (1):</strong>
+</div>
+
+<div class="paragraph">
+    Deoarece <strong>△ABC</strong> este echilateral și <strong>M</strong> este mijlocul lui <strong>AB</strong>, rezultă că <strong>CM</strong> este mediană în triunghiul <strong>ABC</strong>.
+</div>
+
+<div class="paragraph">
+    ⇒ <strong>CM ⟂ AB</strong>
+</div>
+
+<div class="paragraph">
+    Deoarece <strong>△ABD</strong> este echilateral și <strong>M</strong> este mijlocul lui <strong>AB</strong>, rezultă că <strong>DM</strong> este mediană în triunghiul <strong>ABD</strong>.
+</div>
+
+<div class="paragraph">
+    ⇒ <strong>DM ⟂ AB</strong>
+</div>
+
+<div class="paragraph">
+    Avem <strong>CM ⟂ AB</strong>, <strong>DM ⟂ AB</strong> și <strong>CM ∩ DM = {M}</strong>.
+</div>
+
+<div class="paragraph">
+    Cum <strong>AB ⊂ (ABC)</strong> și <strong>AB ⊂ (ABD)</strong>, rezultă:
+</div>
+
+<div class="paragraph">
+    <div class="important">
+        ⇒ <strong>(CMD) ⟂ (ABC)</strong> și <strong>(CMD) ⟂ (ABD)</strong> ✓
+    </div>
+</div>
+
+	
+    <div class="paragraph">
+        <strong>Rezolvare (2):</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>a)</strong> Demonstrăm perpendicularitatea planelor.
+    </div>
+    
+    <div class="paragraph">
+        Deoarece <span class="math">△ABC</span> este echilateral și <strong>M</strong> este mijlocul lui <strong>AB</strong>:
+    </div>
+    
+    <div class="paragraph">
+        ⇒ <strong>CM ⊥ AB</strong> (înălțimea din C în triunghiul echilateral ABC)
+    </div>
+    
+    <div class="paragraph">
+        Analog, deoarece <span class="math">△ABD</span> este echilateral și <strong>M</strong> este mijlocul lui <strong>AB</strong>:
+    </div>
+    
+    <div class="paragraph">
+        ⇒ <strong>DM ⊥ AB</strong> (înălțimea din D în triunghiul echilateral ABD)
+    </div>
+    
+    <div class="paragraph">
+        Știm că planele <strong>(ABC)</strong> și <strong>(ABD)</strong> sunt perpendiculare și au ca intersecție dreapta <strong>AB</strong>.
+    </div>
+    
+    <div class="paragraph">
+        Cum <strong>CM ⊥ AB</strong> și <strong>CM ⊂ (ABC)</strong>, iar planele (ABC) și (ABD) sunt perpendiculare:
+    </div>
+    
+    <div class="paragraph">
+        ⇒ <strong>CM ⊥ (ABD)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Analog, cum <strong>DM ⊥ AB</strong> și <strong>DM ⊂ (ABD)</strong>:
+    </div>
+    
+    <div class="paragraph">
+        ⇒ <strong>DM ⊥ (ABC)</strong>
+    </div>
+    
+    <div class="paragraph">
+        Deoarece <strong>CM ⊂ (CMD)</strong> și <strong>CM ⊥ (ABD)</strong>:
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        ⇒ <strong>(CMD) ⊥ (ABD)</strong> ✓
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        Deoarece <strong>DM ⊂ (CMD)</strong> și <strong>DM ⊥ (ABC)</strong>:
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        ⇒ <strong>(CMD) ⊥ (ABC)</strong> ✓
+        </div>
+    </div>
+    
+    <div class="paragraph">
+        <strong>b)</strong> Calculăm aria triunghiului CMD.
+    </div>
+    
+    <div class="paragraph">
+        Dat: <strong>AB = 8 cm</strong>
+    </div>
+    
+    <div class="paragraph">
+        Cum <strong>M</strong> este mijlocul lui <strong>AB</strong>:
+    </div>
+    
+    <div class="paragraph">
+        ⇒ <strong>AM = MB = 4 cm</strong>
+    </div>
+    
+    <div class="paragraph">
+        În <span class="math">△ABC</span> echilateral cu latura 8 cm, înălțimea <strong>CM</strong> este:
+    </div>
+    
+    <div class="paragraph">
+        <strong>CM = (AB · √3)/2 = (8√3)/2 = 4√3 cm</strong>
+    </div>
+    
+    <div class="paragraph">
+        În <span class="math">△ABD</span> echilateral cu latura 8 cm, înălțimea <strong>DM</strong> este:
+    </div>
+    
+    <div class="paragraph">
+        <strong>DM = (AB · √3)/2 = (8√3)/2 = 4√3 cm</strong>
+    </div>
+    
+    <div class="paragraph">
+        Din punctul <strong>a)</strong> știm că <strong>CM ⊥ (ABD)</strong>, deci <strong>CM ⊥ DM</strong>.
+    </div>
+    
+    <div class="paragraph">
+        Prin urmare, <span class="math">△CMD</span> este dreptunghic în <strong>M</strong>.
+    </div>
+    
+    <div class="paragraph">
+        Aria triunghiului dreptunghic CMD:
+    </div>
+    
+    <div class="paragraph">
+        <strong>Aria(CMD) = (CM × DM)/2</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Aria(CMD) = (4√3 × 4√3)/2</strong>
+    </div>
+    
+    <div class="paragraph">
+        <strong>Aria(CMD) = (16 × 3)/2 = 48/2</strong>
+    </div>
+    
+    <div class="paragraph">
+        <div class="important">
+        <strong>Aria(CMD) = 24 cm²</strong> ✓
+        </div>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Sus</button>
+    <button id="downBtn">⬇ Jos</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+        const lastVisible = paragraphs[visibleCount - 1];
+        lastVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>

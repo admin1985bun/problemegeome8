@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distanță în Cub</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+}
+.paragraph.visible {
+    display: block;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+.important {
+    background: #FFF9E6;
+    padding: 15px;
+    border-left: 4px solid #F39C12;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.source {
+    font-style: italic;
+    color: #7F8C8D;
+    font-size: 16px;
+}
+.note {
+    background: #E8F4F8;
+    padding: 12px;
+    border-left: 4px solid #3498DB;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        <strong>Problemă:</strong> În figura alăturată este reprezentat un cub \(ABCDA'B'C'D'\) cu \(AB = 6\) cm.
+    </div>
+    
+    <div class="paragraph">
+        <strong>Cerință:</strong> Calculează distanța de la punctul \(A'\) la planul \((BC'D')\).
+    </div>
+    
+    <div class="paragraph">
+        <span class="source">Sursa: Teste minister</span>
+    </div>
+    
+    
+<div class="controls">
+    <button id="upBtn">⬆ Sus</button>
+    <button id="downBtn">⬇ Jos</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+        const lastVisible = paragraphs[visibleCount - 1];
+        lastVisible.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>

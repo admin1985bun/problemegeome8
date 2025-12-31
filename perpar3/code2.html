@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Problema 17 – Paralelipiped dreptunghic</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #F5F7FA;
+    color: #2C3E50;
+    line-height: 1.6;
+}
+.container {
+    max-width: 900px;
+    margin: 40px auto 140px auto;
+    padding: 20px;
+}
+.paragraph {
+    background: white;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: none;
+    border-left: 5px solid #3498db;
+}
+.paragraph.visible {
+    display: block;
+}
+.math {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-style: italic;
+    color: #2C3E50;
+}
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+button {
+    font-size: 18px;
+    padding: 8px 18px;
+    margin: 0 8px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #2C3E50;
+    color: white;
+    transition: background 0.3s;
+}
+button:hover:not(:disabled) {
+    background: #34495e;
+}
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+.title {
+    color: #2C3E50;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.section-title {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="paragraph visible">
+        <div class="title">Enunț:</div>
+        Fie <span class="math">ABCDA'B'C'D'</span> un paralelipiped dreptunghic cu
+        <span class="math">AB = √2</span> cm și <span class="math">BC = √3</span> cm.
+        Știind că o furnică parcurge distanța de la punctul <span class="math">B</span>
+        la punctul <span class="math">D'</span> pe un drum de lungime minimă
+        de <span class="math">√(11 + 2√6)</span> cm,
+        aflați înălțimea paralelipipedului.
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Înțelegerea problemului</div>
+        Avem un paralelipiped dreptunghic <span class="math">ABCDA'B'C'D'</span> cu:<br><br>
+        • <span class="math">AB = √2</span> cm<br>
+        • <span class="math">BC = √3</span> cm<br>
+        • Înălțimea <span class="math">h = AA'</span> (necunoscută)<br><br>
+        Furnica merge de la <span class="math">B</span> la <span class="math">D'</span> pe suprafața paralelipipedului, pe drumul cel mai scurt, care are lungimea <span class="math">√(11 + 2√6)</span> cm.
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Metoda de rezolvare</div>
+        Pentru a găsi drumul minim pe suprafața paralelipipedului, trebuie să "desfășurăm" suprafața. Există mai multe posibilități de desfășurare, dar vom analiza cele mai probabile trasee.<br><br>
+        Cheia este că drumul cel mai scurt pe o suprafață desfășurată este o linie dreaptă între cele două puncte.
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Traseul 1: Prin fața laterală BCC'B' și apoi fața superioară</div>
+        Desfășurând fețele <span class="math">ABB'A'</span> și <span class="math">ADD'A'</span>, obținem un dreptunghi în care:<br><br>
+        • Pornim din <span class="math">B</span><br>
+        • Drumul minim este o linie dreaptă până la <span class="math">D'</span><br><br>
+        În acest caz, coordonatele sunt:<br>
+        • <span class="math">B</span> la poziția <span class="math">(0, 0)</span><br>
+        • <span class="math">D'</span> la poziția <span class="math">(BC + CD, h) = (√3 + √2, h)</span><br><br>
+        Distanța: <span class="math">d₁ = √[(√3 + √2)² + h²]</span>
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Calculul lui (√3 + √2)²</div>
+        Să calculăm <span class="math">(√3 + √2)²</span>:<br><br>
+        <span class="math">(√3 + √2)² = (√3)² + 2·√3·√2 + (√2)²</span><br>
+        <span class="math">= 3 + 2√6 + 2</span><br>
+        <span class="math">= 5 + 2√6</span><br><br>
+        Deci distanța devine:<br>
+        <span class="math">d₁ = √(5 + 2√6 + h²)</span>
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Ecuația drumului minim</div>
+        Știm că drumul minim este <span class="math">√(11 + 2√6)</span> cm.<br><br>
+        Prin urmare:<br>
+        <span class="math">√(5 + 2√6 + h²) = √(11 + 2√6)</span>
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Rezolvarea ecuației</div>
+        Ridicând ambele părți la pătrat:<br><br>
+        <span class="math">5 + 2√6 + h² = 11 + 2√6</span><br><br>
+        Simplificăm (scădem <span class="math">2√6</span> din ambele părți):<br><br>
+        <span class="math">5 + h² = 11</span><br><br>
+        <span class="math">h² = 11 - 5</span><br><br>
+        <span class="math">h² = 6</span><br><br>
+        <span class="math">h = √6</span> cm
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Verificare</div>
+        Să verificăm rezultatul:<br><br>
+        Distanța minimă = <span class="math">√(5 + 2√6 + 6) = √(11 + 2√6)</span> ✓<br><br>
+        Rezultatul este corect!
+    </div>
+    
+    <div class="paragraph">
+        <div class="title">Răspuns final</div>
+        <strong>Înălțimea paralelipipedului este <span class="math">h = √6</span> cm.</strong>
+    </div>
+</div>
+
+<div class="controls">
+    <button id="upBtn">⬆ Pasul anterior</button>
+    <br><br>
+    <button id="downBtn">⬇ Pasul următor</button>
+</div>
+
+<script>
+const paragraphs = document.querySelectorAll(".paragraph");
+let visibleCount = 1;
+const upBtn = document.getElementById("upBtn");
+const downBtn = document.getElementById("downBtn");
+
+function updateView() {
+    paragraphs.forEach((p, i) => {
+        p.classList.toggle("visible", i < visibleCount);
+    });
+    upBtn.disabled = visibleCount === 1;
+    downBtn.disabled = visibleCount === paragraphs.length;
+}
+
+upBtn.onclick = () => {
+    if (visibleCount > 1) {
+        visibleCount--;
+        updateView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+};
+
+downBtn.onclick = () => {
+    if (visibleCount < paragraphs.length) {
+        visibleCount++;
+        updateView();
+    }
+};
+
+updateView();
+</script>
+</body>
+</html>
