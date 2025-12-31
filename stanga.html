@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meniu Geometrie Spațiu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #0f2557 0%, #1a3a6b 100%);
+            color: #e8e8e8;
+            padding: 20px 15px;
+            line-height: 1.6;
+        }
+        
+        .section-title {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .section-title:first-child {
+            margin-top: 0;
+        }
+        
+        .subsection-title {
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 15px 0 10px 0;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .menu-table {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        
+        .menu-item {
+            background: rgba(230, 230, 230, 0.95);
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .menu-item:hover {
+            background: rgba(240, 240, 240, 1);
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .menu-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .menu-item li {
+            margin: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .menu-item li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+        
+        .menu-item a {
+            color: #000066;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .menu-item a:hover {
+            color: #4a90e2;
+            text-decoration: underline;
+        }
+        
+        .video-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .video-link::before {
+            content: "🎥";
+            margin-right: 5px;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #4a90e2;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5ba3ff;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            .section-title {
+                font-size: 1rem;
+            }
+            
+            .subsection-title {
+                font-size: 0.9rem;
+            }
+            
+            .menu-item {
+                padding: 10px 12px;
+            }
+            
+            .menu-item a {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section-title">Cuprins</div>
+    
+    <div class="subsection-title">Paralelism&perpendicularitate</div>
+    <div class="menu-table">
+        <div class="menu-item">
+            <ul>
+                <li><a href="perpar1/index.html" target="_new">Problema nr. 1</a></li>
+                <li><a href="perpar2/index.html" target="_new">Problema nr. 2</a></li>
+                <li><a href="perpar3/index.html" target="_new">Problema nr. 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="subsection-title">Corpuri geometrice</div>
+    <div class="menu-table">
+        <div class="menu-item">
+            <ul>
+                <li><a href="paraldr1/index.html" target="_new">Problema nr. 1</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="menu-table">
+        <div class="menu-item">
+            <ul>
+                <li><a href="intro.html" target="intro">Introducere</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
